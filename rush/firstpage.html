@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>orkarnja's team</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+      body {
+        background-image: url("images/wave-bg.svg") ;
+        background-color: antiquewhite;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+      }
+    #logo {
+        margin-right: 60px;
+        height: 200px;
+      }
+    .text{
+      text-align: center;
+    }
+    .line::before {
+      content: "";
+      width: 2.5px;
+      height: 200px;
+      background-color: black;
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      margin-right : 30px
+    }
+    .btn {
+        padding: 10px 20px;
+        background-color: #F6E05E;
+        color: black;
+        border-radius: 12px;
+        text-align: center;
+        cursor: pointer;
+        margin: 10px;
+        font-family: 'Dosis', sans-serif;
+        font-size: 1vw;
+      }
+      .btn:hover{
+         box-shadow: 5px 5px #96893b;
+         background-color: #ffffff;
+         color: #ebcb10;
+         transition-duration: 0.25s;
+      }
+  </style>
+</head>
+<body>
+  <div class = "container">
+  <img id = "logo" src = ./images/42_Logo.png>
+  <div>
+    <div class = "text">
+    <h1> Orkarnja's Team</h1>
+    <p> Discovery Piscine Rush Project</p>
+    </div>
+    <div class = "line"></div>
+    <button class="btn" id="btn1">napalava</button>
+    <button class="btn" id="btn2">orkarnja</button>
+  </div>
+  </div>
+  <script>
+    document.getElementById("btn1").addEventListener("click", function() {
+      window.open("./napalava/index.html", "_blank");
+    });
+    document.getElementById("btn2").addEventListener("click", function() {
+      window.open("./orkarnja/index.html", "_blank");
+    });
+  </script>
+</body>
+</html>
