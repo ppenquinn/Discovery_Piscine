@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex01bis</title>
+  <style>
+    div{
+      background-color: red;
+      width: 200px;
+      height: 200px ;
+      border-radius: 100px;
+    }
+  </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script>
+    let size = 200;
+    let colorIndex = 0 ;
+    const colors = ["red","green","blue"];
+    $(document).ready(function(){
+      $("#balloon").click(function(){
+        size += 10 ;
+        if (size > 420) {size = 200}
+        $("#balloon").css("width", size + "px");
+        $("#balloon").css("height",size + "px");
+        $("#balloon").css("border-radius", size/2 + "px");
+        colorIndex = (colorIndex + 1) % 3;
+        $("#balloon").css("background-color", colors[colorIndex]);
+      });
+      $("#balloon").on("mouseout",function(){
+        size -= 5 ;
+        if (size < 200) {size = 200}
+        else{
+          $("#balloon").css("width", size + "px");
+          $("#balloon").css("height",size + "px");
+          $("#balloon").css("border-radius", size/2 + "px");
+          colorIndex = (colorIndex + 2) % 3;
+          $("#balloon").css("background-color", colors[colorIndex]);
+        }
+      });
+
+
+    });
+  </script>
+</head>
+<body>
+  <div id = "balloon" ></div> 
+</body>
+</html>

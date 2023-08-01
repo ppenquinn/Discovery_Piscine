@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="backgroound.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script> 
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("body").css("background-color",randomcolor())
+      });
+    });
+    function randomcolor(){
+      let color = "rgb(" ;
+      for (let i = 0; i < 3; i++) {
+        color += Math.floor(Math.random() * 256) ;
+        if (i < 2) {color += "," ;}
+        else {color += ")" ;}
+      }
+      return color ;
+    }
+  </script>
+  <title>ex00bis</title>
+</head>
+<body>
+  <button>Click Me!</button>
+ 
+</body>
+</html>

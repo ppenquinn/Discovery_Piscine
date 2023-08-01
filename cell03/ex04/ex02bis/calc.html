@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#calc").click(function(){
+        if ($("#num1").val() != "" && $("#num1").val() != ""){
+        var num1 = Number($("#num1").val());
+        var num2 = Number($("#num2").val());
+        }
+        let operator = $("#operator").val() ;
+        let result ;
+        if (num1 >= 0 && num2 >= 0){
+          switch(operator){
+            case "+" : result = num1 + num2 ; break ;
+            case "-" : result = num1 - num2 ; break ;
+            case "*" : result = num1 * num2 ; break ;
+            case "/" : 
+              if (num2 != 0)
+                {result = num1 / num2 ; }
+              else
+                {alert("It's over 9000") ; console.log("It's over 9000") ;}
+              break;
+            case "%" :   
+              if (num2 != 0)
+                {result = num1 % num2 ; }
+              else
+                {alert("It's over 9000") ; console.log("It's over 9000") ;}
+              break ;
+            default : break;
+          }
+          if (result != undefined){
+          alert(result) ; console.log(result) ;
+          }
+        }  
+        else {alert("Error :("); console.log("Error :(") }
+      });
+      setInterval(function(){alert("Please, use me...")},30000);
+    });
+  </script>
+</head>
+<body>
+  <input id = "num1">
+  <select id = "operator">
+    <option value = "+"> + </option>
+    <option value = "-"> - </option>
+    <option value = "*"> * </option>
+    <option value = "/"> / </option>
+    <option value = "%"> % </option>
+  </select>
+  <input id = "num2">
+  <button id = "calc"> Try me! </button>
+</body>
+</html>
